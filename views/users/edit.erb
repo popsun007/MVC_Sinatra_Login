@@ -1,0 +1,22 @@
+<h1>New User</h1>
+<form actiion="/users/<%= @user.id %>/edit" method="post">
+	<!-- <input type="hidden" name="_method" value="patch"> -->
+<p>
+	<label for="email">Email:</label>
+	<input type="text" name="Email" value="<%= @user.email %>">	
+</p>
+<p>
+	<label for="First Name">First Name:</label>
+	<input type="text" name="First_name" value="<%= @user.first_name %>">	
+</p>
+<p>
+	<label for="Last Name">Last Name:</label>
+	<input type="text" name="Last_name" value="<%= @user.last_name %>">	
+</p>
+	<input type="submit" value="Update User">	
+</form>
+<form action="/users/<%= @user.id %>/delete_user" method="post">
+    <!-- <input type="hidden" name="_method" value="delete"> -->
+    <input type="submit" value="Delete User">
+</form>
+<a href="/users">Home</a>
