@@ -3,7 +3,7 @@
 </form>
 <h2><%= @user.first_name %> <%= @user.last_name %></h2>
 <form action="/posts/create" method="post">
-	
+	<textarea name="Content"></textarea>
 </form>
 <% @user.posts.each do |u| %>
 	<%= u.content %>
