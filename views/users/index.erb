@@ -1,4 +1,7 @@
 <h1>All Users</h1>
+<form action="/sessions/delete" method="post">
+	<input type="submit" value="Sign Out">
+</form>
 <% @users.each do |u| %>
   <p><%= u.first_name %> <%= u.last_name %></p>
 <% end %>

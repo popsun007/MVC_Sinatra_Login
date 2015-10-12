@@ -42,3 +42,10 @@ def create_user(name)
   user.save
   return user
 end
+
+def sign_in(user)
+  visit '/sessions/new'
+  fill_in 'Email', with: user.email
+  fill_in 'Password', with: 'password'
+  click_button 'Sign In'
+end

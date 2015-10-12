@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
       erb :"sessions/new"
     end
   end
+
   post '/' do
     user = User.find_by(email: params[:Email])
     if user && user.encrypted_password == BCrypt::Engine.hash_secret(params[:Password], user.salt)
@@ -14,4 +15,10 @@ class SessionsController < ApplicationController
       redirect '/sessions/new'
     end
   end
+
+  post '/delete' do
+    session[:user_id] = nil
+    redirect "/sessions/new"
+  end
+
 end
