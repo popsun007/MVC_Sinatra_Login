@@ -1,0 +1,23 @@
+<form action="/sessions" method="post">
+	
+	<p>
+		<label>
+			User Email:
+			<input type="text" name="Email">
+		</label>
+	</p>
+
+	<p>
+		<label>
+			Password:
+			<input type="password" name="Password">
+		</label>
+	</p>
+	<p style="color: red">
+	 	<% if defined? session[:errors]  %>
+	 	<%= session[:errors] %>		
+	 	<% end %>
+	</p>
+	<input type="submit" value="Sign In">
+	<a href="/users">Main</a>
+</form>
