@@ -6,7 +6,12 @@
 	<textarea name="Content"></textarea>
 	<input type="submit" value="Post">
 </form>
-<% @user.posts.each do |u| %>
-	<%= u.content %>
+<% @user.posts.each do |p| %>
+	<%= p.content %>
+	<form action="/posts/<%= p.id %>/delete_post" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="hidden" name="user_id" value="<%= @user.id %>">
+		<input type="submit" value="Delete Post">
+	</form>
 <% end %>
 <a href="/users">Show Users</a>

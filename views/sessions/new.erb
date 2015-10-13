@@ -14,7 +14,8 @@
 	</p>
 	<p style="color: red">
 	 	<% if defined? session[:errors]  %>
-	 	<%= session[:errors] %>		
+	 	<%= session[:errors] %>	
+	 	<% session[:errors] = nil %>	
 	 	<% end %>
 	</p>
 	<input type="submit" value="Sign In">
